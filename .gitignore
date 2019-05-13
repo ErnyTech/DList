@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/dlist
+dlist.so
+dlist.dylib
+dlist.dll
+dlist.a
+dlist.lib
+dlist-test-*
+*.exe
+*.o
+*.obj
+*.lst
+dub.selections.json

@@ -1,0 +1,12 @@
+{
+    "name": "dlist",
+    "description": "Implementation of lists in D, like Java ArrayList",
+	"authors": [
+		"Ernesto Castellotti"
+	],
+	"copyright": "Copyright © 2019, Ernesto Castellotti",
+	"license": "MPL-2.0",
+	"dependencies": {
+		"stdx-allocator": "~>3.0.2"
+	}
+}
