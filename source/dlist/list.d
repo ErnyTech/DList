@@ -5,7 +5,7 @@ Main interface to implement lists with the DList API.
 This module provides an abstraction between the implementation and the API
 
 Copyright: Copyright 2019 Ernesto Castellotti <erny.castell@gmail.com>
-License:   $(HTTP boost.org/LICENSE_1_0.txt, Boost License 1.0).
+License:   $(HTTP https://www.mozilla.org/en-US/MPL/2.0/, Mozilla Public License - Version 2.0).
 Authors:   $(HTTP github.com/ErnyTech, Ernesto Castellotti)
 */
 module dlist.list;
