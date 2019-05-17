@@ -1,3 +1,10 @@
+// Written in the D programming language.
+/**
+This module provides the necessary utility methods, to be used only internally
+Copyright: Copyright 2019 Ernesto Castellotti <erny.castell@gmail.com>
+License:   $(HTTP https://www.mozilla.org/en-US/MPL/2.0/, Mozilla Public License - Version 2.0).
+Authors:   $(HTTP github.com/ErnyTech, Ernesto Castellotti)
+*/
 module dlist.baselist;
 
 mixin template ListOperatorOverload(T) {
