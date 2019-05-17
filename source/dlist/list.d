@@ -12,6 +12,9 @@ module dlist.list;
 
 import dlist.baselist;
 
+/**
+ * The abstract class from which all DList implementations must be based, contains the standard APIs for using DList
+ */
 interface List(T) {
     /**
      * Adds the specified item to the end of the list.
