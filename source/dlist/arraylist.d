@@ -1,3 +1,10 @@
+// Written in the D programming language.
+/**
+This module provides an implementation of DList
+Copyright: Copyright 2019 Ernesto Castellotti <erny.castell@gmail.com>
+License:   $(HTTP https://www.mozilla.org/en-US/MPL/2.0/, Mozilla Public License - Version 2.0).
+Authors:   $(HTTP github.com/ErnyTech, Ernesto Castellotti)
+*/
 module dlist.arraylist;
 import stdx.allocator.mallocator : Mallocator;
 import dlist.list : List;
@@ -6,13 +13,20 @@ import dlist.baselist : AllocatorInit, UseGC;
 enum DEFAULT_CAPACITY = 1;
 enum BIG_ARRAY = 512;
 enum BIG_ARRAY_INCREASE_CAPACITY = 1024;
-
+/**
+ * ArrayList is a DList implementation of an array with resizable dimensions without using the GC
+ */
 class ArrayList(T, Allocator = Mallocator) : List!T {
     private T[] data;
     private size_t size = 0;
     mixin AllocatorInit!Allocator;
     mixin UseGC!T;
 
+    /**
+     * Initialize ArrayList with the default capacity size (10).
+     *
+     * This function cause a memory allocation.
+     */
     this() @nogc {
         import stdx.allocator : makeArray;
 
@@ -24,6 +38,14 @@ class ArrayList(T, Allocator = Mallocator) : List!T {
         }
     }
 
+    /**
+     * Initialize ArrayList by adding the specified array to the top of the list, the capacity of the list will be equal to the length of the specified array.
+     *
+     * This function cause a memory allocation.
+     *
+     * Params:
+     *      initialArray = the array containing the initial elements
+     */
     this(T[] initialArray) @nogc {
         import stdx.allocator : makeArray;
 
@@ -37,6 +59,14 @@ class ArrayList(T, Allocator = Mallocator) : List!T {
         }
     }
 
+    /**
+     * Initialize ArrayList by adding the specified DList to the top of the list, the capacity of the list will be equal to the length of the specified DList.
+     *
+     * This function cause a memory allocation.
+     *
+     * Params:
+     *      initialList = the DList containing the initial elements
+     */
     this(List!T initialList) @nogc {
         import stdx.allocator : makeArray;
 
@@ -50,6 +80,14 @@ class ArrayList(T, Allocator = Mallocator) : List!T {
         }
     }
 
+    /**
+     * Initialize ArrayList with the specified capacity size.
+     *
+     * This function cause a memory allocation.
+     *
+     * Params:
+     *      initialCapacity = the initial capacity of the list
+     */
     this(size_t initialCapacity) @nogc {
         import stdx.allocator : makeArray;
 
@@ -61,6 +99,9 @@ class ArrayList(T, Allocator = Mallocator) : List!T {
         }
     }
 
+    /**
+     * Destroys the list and disallocates all previously allocated memory.
+     */
     ~this() @nogc {
         clear();
     }
